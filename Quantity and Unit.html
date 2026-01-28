@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grade X — Quantity and Unit</title>
+  <meta name="description" content="Grade X high school physics: measurement, vectors, kinematics, dynamics, energy and more.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+  <style>
+    /* Theme variables (defaults) */
+    :root {
+      --bg: #ffffff;
+      --text: #0b1220;
+      --header-bg: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+      --header-text: #ffffff;
+      --sidebar-bg: #f8f9fa;
+      --sidebar-text: #0b1220;
+      --card-bg: #ffffff;
+      --accent: #0d6efd;
+      --muted: #6c757d;
+      --footer-bg: #212529;
+      --footer-text: #ffffff;
+    }
+
+    /* Soft / Pastel theme */
+    .theme-soft {
+      --bg: #fbfdff;
+      --text: #0f1720;
+      --header-bg: linear-gradient(90deg, #d6e9ff 0%, #cfeef4 50%, #eaf7ff 100%);
+      --header-text: #052b3a;
+      --sidebar-bg: #ffffff;
+      --sidebar-text: #052b3a;
+      --card-bg: #ffffff;
+      --accent: #7aa7ff;
+      --muted: #6b7280;
+      --footer-bg: #f1f5f9;
+      --footer-text: #032033;
+    }
+
+    /* Global layout and defaults */
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      transition: background-color 250ms ease, color 250ms ease;
+    }
+
+    header.site-header {
+      background: var(--header-bg);
+      color: var(--header-text);
+    }
+    header.site-header .theme-controls .btn { border: none; }
+
+    /* Sidebar & accordion */
+    nav.sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      border-radius: 6px;
+      padding: 0.5rem;
+      transition: background-color 250ms ease, color 250ms ease;
+    }
+
+    .accordion-button {
+      background: transparent;
+      color: var(--sidebar-text);
+      font-weight: 700;
+    }
+    .accordion-button.collapsed { opacity: 0.95; }
+    .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.12); }
+
+    .accordion-body {
+      background: var(--card-bg);
+      color: var(--sidebar-text);
+    }
+
+    /* Ensure content column uses transparent background rather than white */
+    .content-column {
+      background: transparent;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .content-column h2 { color: var(--text); }
+    .content-column p, .content-column li { color: var(--text); }
+
+    /* Buttons */
+    .btn-accent { background-color: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-accent-outline { color: var(--accent); border-color: var(--accent); }
+
+    footer.footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+    }
+
+    /* Layout helpers */
+    .layout-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .layout-flex .sidebar-column {
+      flex: 0 0 260px;
+      max-width: 260px;
+      position: sticky;
+      top: 1rem;
+      height: calc(100vh - 6rem);
+      overflow: auto;
+    }
+    .layout-flex .content-column {
+      flex: 1 1 0%;
+      min-width: 0;
+      max-width: calc(100% - 260px);
+    }
+
+    .theme-toggle-btn {
+      min-width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      margin-left: 0.25rem;
+    }
+
+    nav.sidebar a {
+      color: var(--sidebar-text);
+      text-decoration: none;
+    }
+    nav.sidebar a:hover { text-decoration: underline; }
+
+    header.site-header a { color: var(--header-text); }
+
+    /* Responsive */
+    @media (max-width: 767.98px) {
+      .layout-flex { display: block; }
+      .layout-flex .sidebar-column {
+        position: static;
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+      .layout-flex .content-column { max-width: 100%; }
+    }
+    .contenedor {
+  display: flex;
+  justify-content: center;
+        }
+  </style>
+</head>
+<body>
+  <header class="site-header container-fluid p-4 d-flex align-items-center justify-content-between">
+    <div>
+      <h1 class="h4 m-0">Grade X</h1>
+      <div class="small" style="opacity:.9">Quantity and Unit</div>
+    </div>
+
+    <div class="theme-controls d-flex align-items-center">
+      <label class="me-2 small mb-0">Theme</label>
+      <div class="btn-group" role="group" aria-label="Theme selector">
+        <button type="button" class="btn btn-light theme-toggle-btn" data-theme="theme-default" title="Default theme" aria-label="Default theme">
+          <i class="bi bi-brush"></i>
+        </button>
+        <button type="button" class="btn btn-light theme-toggle-btn" data-theme="theme-soft" title="Soft theme" aria-label="Soft theme">
+          <i class="bi bi-droplet-half"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div class="layout-flex">
+      <aside class="sidebar-column" role="navigation" aria-label="Grade navigation">
+        <nav class="sidebar" aria-labelledby="grades-heading">
+          <h2 id="grades-heading" class="visually-hidden">Grades</h2>
+          <div class="accordion" id="gradesAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingX">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseX" aria-expanded="true" aria-controls="collapseX">
+                  Grade X
+                </button>
+              </h2>
+              <div id="collapseX" class="accordion-collapse collapse show" aria-labelledby="headingX" data-bs-parent="#gradesAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li><a href="Quantity and Unit.html">Quantity and Unit</a></li>
+                    <li>Rules for Writing Numbers</li>
+                    <li>Measurement</li>
+                    <li>Dimension</li>
+                    <li>Concept of Vector</li>
+                    <li>Operations on Vectors</li>
+                    <li>Kinematics of Linear Motion</li>
+                    <li>Kinematics of Circular Motion</li>
+                    <li>Projectile Motion</li>
+                    <li>Dynamics of Linear Motion</li>
+                    <li>Newton's Law of Gravity</li>
+                    <li>Work and Energy</li>
+                    <li>Conservation of Energy</li>
+                    <li>Momentum and Impulse</li>
+                    <li>Simple Harmonic Motion</li>
+                  </ul>
+                  <div class="mt-2">
+                    <a href="Physics_GradeX.html" class="btn btn-sm btn-accent">Open Grade X</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingXI">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseXI" aria-expanded="false" aria-controls="collapseXI">
+                  Grade XI
+                </button>
+              </h2>
+              <div id="collapseXI" class="accordion-collapse collapse" aria-labelledby="headingXI" data-bs-parent="#gradesAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Equilibrium of Rigid Bodies</li>
+                    <li>Centre of Mass</li>
+                    <li>Dynamics of Rotational Motion</li>
+                    <li>Elasticity</li>
+                    <li>Static Fluids</li>
+                    <li>Fluid Dynamics</li>
+                    <li>Heat and Temperature</li>
+                    <li>Kinetic Theory of Gases</li>
+                    <li>Thermodynamics</li>
+                    <li>Mechanical Waves</li>
+                    <li>Sound Waves</li>
+                    <li>Light Waves</li>
+                    <li>Geometrical Optics</li>
+                  </ul>
+                  <div class="mt-2">
+                    <a href="Physics_GradeXI.html" class="btn btn-sm btn-accent-outline">Open Grade XI</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingXII">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseXII" aria-expanded="false" aria-controls="collapseXII">
+                  Grade XII
+                </button>
+              </h2>
+              <div id="collapseXII" class="accordion-collapse collapse" aria-labelledby="headingXII" data-bs-parent="#gradesAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Static Electricity</li>
+                    <li>Electric Current</li>
+                    <li>Magnetism</li>
+                    <li>Electromagnetism</li>
+                    <li>Alternating Current</li>
+                    <li>Atomic Physics</li>
+                    <li>Quantum Theory</li>
+                    <li>Relativity</li>
+                    <li>Radioactivity</li>
+                    <li>Digital Technology</li>
+                  </ul>
+                  <div class="mt-2">
+                    <a href="Physics_GradeXII.html" class="btn btn-sm btn-accent-outline">Open Grade XII</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </nav>
+      </aside>
+
+      <article class="content-column">
+        <h2><b>Quantity and Unit</b></h2>
+            <h3>Base and Derived Quantity</h3>
+            <p><b>Physics quantity</b> is defined as attribute to base properties of phenomenon of nature which has quantitative meaning. Physics quantity base on indeendency divide into <i>base quantity and derived quantity</i>. <b>Base quatity</b> is physical quantity which cannot explain or elaborate become more simple. Hence it's buildong block of every derived quantity. From that, we can understand that <b>derived quantity</b> is physical quantity which derived from base quantity. Hence, it's existence can be take a root from base quantity. Every quantity could be measure using a instrument and get valued next with their <i>units</i>. Derived Quantity whose has same of component base quantity units is known as <i>Equivalent Quantity</i>.</p>
+            <p><b>Units</b> is standard amount of a physical quantity, defined and adopted by convention, against which measurements of that physical quantity are made. In physics, units divede into <i>SI unit and non SI</i> unit. SI is the metric system or international standars that is used universally as a standard for measurements. Meamwhile a non SI units are units from another standardized which not up to international standard. Usually the name of SI Units could be different with to composition of it's base quantity. <i>Hence we could say that these Units whose has the same of base quantity units are Equivalent</i>.</p>
+            <p>There are seventh base quantity that student need to memorize, but once you learn more about physics you will understand about bse quantitty. These are tables of base quantity : </p>
+            <table class="table table-primary table-hover">
+                <tr>
+                    <th>Base Quantity</th>
+                    <th>SI Unit</th>
+                    <th>Dimension</th>
+                    <th>Instrument</th>
+                </tr>
+                <tr>
+                    <td>Length</td>
+                    <td>metre</td>
+                    <td>[L]</td>
+                    <td>Ruler</td>
+                </tr>
+                <tr>
+                    <td>Mass</td>
+                    <td>kilogram</td>
+                    <td>[M]</td>
+                    <td>Balance scale</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>second</td>
+                    <td>[T]</td>
+                    <td>stopwatch</td>
+                </tr>
+                <tr>
+                    <td>Temperature</td>
+                    <td>Kelvin</td>
+                    <td>[&#952;]</td>
+                    <td>thermometer</td>
+                </tr>
+                <tr>
+                    <td>Electric Current</td>
+                    <td>Ampere</td>
+                    <td>[I]</td>
+                    <td>amperemeter</td>
+                </tr>
+                <tr>
+                    <td>Amount of Substance</td>
+                    <td>mol</td>
+                    <td>[N]</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Luminous Intensity</td>
+                    <td>candela</td>
+                    <td>[J]</td>
+                    <td>goniophotometer</td>
+                </tr>
+            </table>
+            <p>And every quantity beside these seventh, known as derived quantity. Because every derived quantity are made up from bse quantity. even though there are so many derived quantity, only some of them that we will use to understand especially for this chapter. Hence, these are some derived quantity that usually we will meet :</p>
+            <table class="table table-info table-hover">
+                <tr>
+                    <th>Derived Quantity</th>
+                    <th>SI Unit</th>
+                    <th>Component of Base Quantity Units</th>
+                </tr>
+                <tr>
+                    <td>Area</td>
+                    <td>m<sup>2</sup></td>
+                    <td>m<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td>Volume</td>
+                    <td>m<sup>3</sup></td>
+                    <td>m<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>Frequency</td>
+                    <td>Hertz (Hz)</td>
+                    <td>1/s</td>
+                </tr>
+                <tr>
+                    <td>Velocity</td>
+                    <td>m/s</td>
+                    <td>m/s</td>
+                </tr>
+                <tr>
+                    <td>Acceleration</td>
+                    <td>m/s<sup>2</sup></td>
+                    <td>m/s<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td>Density</td>
+                    <td>kg/m<sup>3</sup></td>
+                    <td>kg/m<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>Pressure</td>
+                    <td>N/m<sup>3</sup></td>
+                    <td>kg/(ms<sup>2</sup>)</td>
+                </tr>
+                <tr>
+                    <td>Momentum</td>
+                    <td>kg.m/s</td>
+                    <td>kg.m/s</td>
+                </tr>
+                <tr>
+                    <td>Impuls</td>
+                    <td>N.s</td>
+                    <td>kg.m/s</td>
+                </tr>
+                <tr>
+                    <td>Force</td>
+                    <td>Newton (N)</td>
+                    <td>kg.m/s<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td>Work</td>
+                    <td>Joule (j)</td>
+                    <td>kg.m<sup>2</sup>/s<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td>Power</td>
+                    <td>Watt (W)</td>
+                    <td>kg.m<sup>2</sup>/s<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>Debit</td>
+                    <td>m<sup>3</sup>/s</td>
+                    <td>m<sup>3</sup>/s</td>
+                </tr>
+                <tr>
+                    <td>Molarity</td>
+                    <td>Molar</td>
+                    <td>mol/m<sup>3</sup></td>
+                </tr>
+            </table>
+            <p>According to need of direction, physical quantity divide into <b>scalar and vector quantity</b>. Scalar quantity are physical quantity that only contain magnitude (example: <i>distance, speed, temperature, work, momen inertia, mass, etc</i>). Meanwhile Vector quantity are physical quantity that contain magnitude and direction (example: <i>displacement, velocity, acceleration, torque, force, etc</i>).</p>
+            <hr>
+            <h3>Metric Prefixes and Conversion of Units</h3>
+            <p>Metric prefix is unit prefect which precedes a basic unit of measure to indicate multiple/submultiple of the units. Each prefix has a unique symbol that is prepended to any unit symbol. For example prefix kilo could be add into metre, hence it become kilogram which is equivalent with one thousand gram.</p>
+            <p>list of metric sistem could be list within table below:</p>
+        <div  class="contenedor">
+            <div>    
+            <table class="table table-success table-hover">
+                <tr>
+                    <th>Name of prefix</th>
+                    <th>symbol</th>
+                    <th>base 10</th>
+                </tr>
+                <tr>
+                    <td>Quetta</td>
+                    <td>Q</td>
+                    <td>10<sup>30</sup></td>
+                </tr>
+                <tr>
+                    <td>Ronna</td>
+                    <td>R</td>
+                    <td>10<sup>27</sup></td>
+                </tr>
+                <tr>
+                    <td>Yotta</td>
+                    <td>Y</td>
+                    <td>10<sup>24</sup></td>
+                </tr>
+                <tr>
+                    <td>Zetta</td>
+                    <td>Z</td>
+                    <td>10<sup>21</sup></td>
+                </tr>
+                <tr>
+                    <td>Exa</td>
+                    <td>E</td>
+                    <td>10<sup>18</sup></td>
+                </tr>
+                <tr>
+                    <td>Peta</td>
+                    <td>P</td>
+                    <td>10<sup>15</sup></td>
+                </tr>
+                <tr>
+                    <td>Tera</td>
+                    <td>T</td>
+                    <td>10<sup>12</sup></td>
+                </tr>
+                <tr>
+                    <td>Giga</td>
+                    <td>G</td>
+                    <td>10<sup>9</sup></td>
+                </tr>
+                <tr>
+                    <td>Mega</td>
+                    <td>M</td>
+                    <td>10<sup>6</sup></td>
+                </tr>
+                <tr>
+                    <td>kilo</td>
+                    <td>R</td>
+                    <td>10<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>hecto</td>
+                    <td>h</td>
+                    <td>10<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td>deca</td>
+                    <td>da</td>
+                    <td>10</td>
+                </tr>
+            </table>
+            </div>
+            <div>
+            <table class="table table-success table-hover">
+                <tr>
+                    <th>Name of prefix</th>
+                    <th>symbol</th>
+                    <th>base 10</th>
+                </tr>
+                <tr>
+                    <td>Quecto</td>
+                    <td>q</td>
+                    <td>10<sup>-30</sup></td>
+                </tr>
+                <tr>
+                    <td>Ronto</td>
+                    <td>r</td>
+                    <td>10<sup>-27</sup></td>
+                </tr>
+                <tr>
+                    <td>Yocto</td>
+                    <td>y</td>
+                    <td>10<sup>-24</sup></td>
+                </tr>
+                <tr>
+                    <td>Zepto</td>
+                    <td>z</td>
+                    <td>10<sup>-21</sup></td>
+                </tr>
+                <tr>
+                    <td>atto</td>
+                    <td>a</td>
+                    <td>10<sup>-18</sup></td>
+                </tr>
+                <tr>
+                    <td>femto</td>
+                    <td>f</td>
+                    <td>10<sup>-15</sup></td>
+                </tr>
+                <tr>
+                    <td>pico</td>
+                    <td>p</td>
+                    <td>10<sup>-12</sup></td>
+                </tr>
+                <tr>
+                    <td>nano</td>
+                    <td>n</td>
+                    <td>10<sup>-9</sup></td>
+                </tr>
+                <tr>
+                    <td>micro</td>
+                    <td>&#181;</td>
+                    <td>10<sup>-6</sup></td>
+                </tr>
+                <tr>
+                    <td>mili</td>
+                    <td>m</td>
+                    <td>10<sup>-3</sup></td>
+                </tr>
+                <tr>
+                    <td>centi</td>
+                    <td>c</td>
+                    <td>10<sup>-2</sup></td>
+                </tr>
+                <tr>
+                    <td>deci</td>
+                    <td>d</td>
+                    <td>10<sup>-1</sup></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <p>Hence, if you want to convert units to another prefix, you just need substract the power of ten on each prefix and multiplied it with value of unit. And if there is no prefix, it's 10<sup>0</sup>. Take a look of this example:</p>
+        <ul>
+            <li>50 second = ...... milisecond &#8594; second to milisecond (10<sup>0-(-3)</sup>=10<sup>3</sup>),hence <b>50.10<sup>3</sup> milisecond or 50.000 milisecond</b>.</li>
+            <li>400 kb = ...... Mb &#8594; kb to Mb (10<sup>3-6</sup>=10<sup>-3</sup>), hence <b>400.10<sup>-3</sup> Mb or 0,4 Mb</b>.</li>
+            <li>3 km = ...... cm &#8594; km to cm (10<sup>3-(-2)</sup>=10<sup>5</sup>), hence <b>3.10<sup>5</sup> cm or 300000 cm</b>.</li>
+            <li>0,2 hg = ...... Gg &#8594; hg to Gg (10<sup>2-9</sup>=10<sup>-7</sup>), hence <b>0,2.10<sup>-7</sup> Gg or 0,00000002 Gg</b>.</li>
+            <li>0,001 mA = ...... nA &#8594; mA to nA (10<sup>3-(-9)</sup>=10<sup>12</sup>), hence <b>0,001.10<sup>12</sup> nA or 0,000000002 nA</b>.</li>
+        </ul>
+        <p>Beside metric prefix, there is some Conversion units that must be known for student. Each of those Conversion can be see in this table:</p>
+        <table class="table table-warning table-hover">
+            <tr>
+                <td>1 hour = 60 minute</td>
+                <td>1 minute = 60 second</td>
+                <td>1 hour = 3600 second</td>
+                <td>1 feet = 12 inch</td>
+            </tr>
+            <tr>
+                <td>1 inch = 2,5 centimetre</td>
+                <td>1 litre = 1000 cc</td>
+                <td>1 kg = 10 ons</td>
+                <td>1 kg = 2 pounds</td>
+            </tr>
+            <tr>
+                <td>1 m/s = 3,6 km/hour</td>
+                <td>1 gram/cm<sup>3</sup> = 1000 kg/m<sup>3</sup></td>
+                <td>1 Newton = 100000 dyne</td>
+                <td>1 Bar = 100000 Pascal</td>
+            </tr>
+            <tr>
+                <td>1 Bar = 750 mmHg</td>
+                <td>1 year = 365,25 days</td>
+                <td>1 day = 24 hour</td>
+                <td>1 &deg; = 60'</td>
+            </tr>
+            <tr>
+                <td>1 Joule = 10<sup>7</sup> erg</td>
+                <td>1 horsepower = 746 Watt</td>
+                <td>1 Hertz = 60 RPM</td>
+                <td>1 radian = 180/&#960; &deg;</td>
+            </tr>
+            <tr>
+                <td>1 ton= 1000 kg</td>
+                <td>1 kwintal = 100 kg</td>
+                <td>1 electron volt = 1,602.10<sup>-19</sup> Joule</td>
+                <td>1 Tesla = 10<sup>4</sup> Gauss</td>
+            </tr>
+        </table>
+        <p>To convert the value from units left to the right, just multiplied with left value. Meanwhile, for convert left units to right units, just divided with left value. See these example:</p>
+        <ul>
+            <li>4 minute = ...... second &#8594; minute to second (4x60 = 240), hence <b>240 second</b>.</li>
+            <li>9 Bar = ...... mmHg &#8594; Bar to mmHg (9x750 = 6750), hence <b>6750 mmHg</b>.</li>
+            <li>30 m/s = ...... km/hour &#8594; m/s to km/hour (30x3,6 = 108), hence <b>108 km/hour</b>.</li>
+            <li>7 feet = ...... inch &#8594; feet to inch (7x12 = 84), hence <b>84 inch</b>.</li>
+            <li>120 horsepower = ...... Watt &#8594; horsepower to Watt (120x746 = 89520), hence <b>89520 Watt</b>.</li>
+            <li>72 km/hour = ...... m/s &#8594; km/hour to m/s (72/3,6 = 20), hence <b>20 m/s</b>.</li>
+            <li>90 minute = ...... hour &#8594; minute to hour (90/60 = 1,5), hence <b>1,5 hour</b>.</li>
+            <li>1000 days = ...... year &#8594; days to years (1000/365,25 = 2,74), hence <b>2,74 years</b>.</li>
+            <li>13600 kg/m<sup>3</sup> = ...... gram/cm<sup>3</sup> &#8594; kg/m<sup>3</sup> to gram/cm<sup>3</sup> (13600/1000 = 13,6), hence <b>13,6 gram/cm<sup>3</sup></b>.</li>
+            <li>800 Gauss = ...... Tesla &#8594; horsepower to Watt (800/10<sup>4</sup> = 0,02), hence <b>0,02 Tesla</b>.</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer mt-5 p-4 text-center">
+    Achen's Scribbles
+  </footer>
+
+  <!-- Bootstrap bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer crossorigin="anonymous"></script>
+
+  <script>
+    // Theme switching logic (default + soft only)
+    (function () {
+      const themeButtons = document.querySelectorAll('[data-theme]');
+      const storageKey = 'physics_page_theme';
+      const body = document.body;
+
+      // Apply saved theme or default
+      const saved = localStorage.getItem(storageKey) || 'theme-default';
+      if (saved && saved !== 'theme-default') {
+        body.classList.add(saved);
+      }
+
+      // Update active button UI
+      function updateActiveButtons() {
+        themeButtons.forEach(btn => {
+          const theme = btn.getAttribute('data-theme');
+          const isActive = (theme === 'theme-default' && !Array.from(body.classList).some(c => c.startsWith('theme-')))
+                         || body.classList.contains(theme);
+          if (isActive) {
+            btn.classList.add('btn-accent');
+            btn.classList.remove('btn-light');
+          } else {
+            btn.classList.remove('btn-accent');
+            btn.classList.add('btn-light');
+          }
+        });
+      }
+      updateActiveButtons();
+
+      themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const theme = btn.getAttribute('data-theme');
+          // Remove existing theme-* classes
+          Array.from(body.classList).forEach(c => {
+            if (c.startsWith('theme-')) body.classList.remove(c);
+          });
+          if (theme !== 'theme-default') body.classList.add(theme);
+          // Persist selection
+          localStorage.setItem(storageKey, theme);
+          updateActiveButtons();
+        });
+
+        // keyboard support
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
