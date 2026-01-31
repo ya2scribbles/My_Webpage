@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Highschool Physics — Home</title>
+  <meta name="description" content="Home for Highschool Physics — links and overview for Grade X, XI and XII.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+  <style>
+    /* Theme variables (defaults) */
+    :root {
+      --bg: #ffffff;
+      --text: #0b1220;
+      --header-bg: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+      --header-text: #ffffff;
+      --sidebar-bg: #f8f9fa;
+      --sidebar-text: #0b1220;
+      --card-bg: #ffffff;
+      --accent: #0d6efd;
+      --muted: #6c757d;
+      --footer-bg: #212529;
+      --footer-text: #ffffff;
+    }
+
+    /* Soft theme */
+    .theme-soft {
+      --bg: #fbfdff;
+      --text: #0f1720;
+      --header-bg: linear-gradient(90deg, #d6e9ff 0%, #cfeef4 50%, #eaf7ff 100%);
+      --header-text: #052b3a;
+      --sidebar-bg: #ffffff;
+      --sidebar-text: #052b3a;
+      --card-bg: #ffffff;
+      --accent: #7aa7ff;
+      --muted: #6b7280;
+      --footer-bg: #f1f5f9;
+      --footer-text: #032033;
+    }
+
+    /* Layout + base */
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      transition: background-color 200ms ease, color 200ms ease;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    header.site-header {
+      background: var(--header-bg);
+      color: var(--header-text);
+    }
+    header.site-header a { color: var(--header-text); text-decoration: none; }
+
+    .site-hero {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.02));
+      padding: 2.25rem 1rem;
+      border-radius: 8px;
+    }
+
+    .card-topic {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .card-topic:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(13,110,253,0.06);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .grid-topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    footer.footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+    }
+
+    /* Theme controls */
+    .theme-toggle-btn {
+      min-width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      margin-left: 0.25rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .site-hero { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header container-fluid p-4 d-flex align-items-center justify-content-between">
+    <div>
+      <a href="Physics_Home.html" aria-label="Home">
+        <h1 class="h4 m-0">Highschool Physics</h1>
+        <div class="small" style="opacity:.9">Course Home</div>
+      </a>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <nav aria-label="Primary">
+        <a class="me-3 small" href="Physics_GradeX.html">Grade X</a>
+        <a class="me-3 small" href="Physics_GradeXI.html">Grade XI</a>
+        <a class="me-3 small" href="Physics_GradeXII.html">Grade XII</a>
+      </nav>
+
+      <div class="theme-controls d-flex align-items-center ms-3">
+        <label class="me-2 small mb-0">Theme</label>
+        <div class="btn-group" role="group" aria-label="Theme selector">
+          <button type="button" class="btn btn-light theme-toggle-btn" data-theme="theme-default" title="Default theme" aria-label="Default theme">
+            <i class="bi bi-brush"></i>
+          </button>
+          <button type="button" class="btn btn-light theme-toggle-btn" data-theme="theme-soft" title="Soft theme" aria-label="Soft theme">
+            <i class="bi bi-droplet-half"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <section class="site-hero p-3 mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h2 class="h3 mb-2">Welcome to Highschool Physics</h2>
+          <p class="mb-2">
+            This site collects notes, examples, and exercises for Grades X — XII. Use the navigation or the cards below to jump to each grade's page.
+            The layout and theme system are shared across pages for a consistent reading experience.
+          </p>
+          <p class="mb-0">
+            Quick actions:
+            <a class="btn btn-sm btn-accent ms-2" href="Physics_GradeXI.html">Open Grade XI</a>
+            <a class="btn btn-sm btn-accent-outline ms-2" href="Physics_GradeX.html">Open Grade X</a>
+            <a class="btn btn-sm btn-accent-outline ms-2" href="Physics_GradeXII.html">Open Grade XII</a>
+          </p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <div class="small text-muted">Achen's Scribbles</div>
+          <div class="mt-2" style="font-size: 0.9rem;">
+            Curated notes · Examples · Practice problems
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="grades-overview">
+      <h3 id="grades-overview" class="h5 mb-3">Grades Overview</h3>
+      <div class="grid-topics">
+        <article class="card card-topic p-3">
+          <h4 class="h6">Grade X — Foundations</h4>
+          <p class="small text-muted mb-2">Measurement, vectors, kinematics, dynamics and energy.</p>
+          <a href="Physics_GradeX.html" class="stretched-link" aria-label="Open Grade X"></a>
+        </article>
+
+        <article class="card card-topic p-3">
+          <h4 class="h6">Grade XI — Mechanics & Waves</h4>
+          <p class="small text-muted mb-2">Rigid-body equilibrium, rotational motion, fluids, thermodynamics, waves and optics.</p>
+          <a href="Physics_GradeXI.html" class="stretched-link" aria-label="Open Grade XI"></a>
+        </article>
+
+        <article class="card card-topic p-3">
+          <h4 class="h6">Grade XII — Electricity & Modern Physics</h4>
+          <p class="small text-muted mb-2">Electromagnetism, alternating currents, atomic & nuclear physics, quantum ideas.</p>
+          <a href="Physics_GradeXII.html" class="stretched-link" aria-label="Open Grade XII"></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-4">
+      <h3 class="h6">About this site</h3>
+      <p class="small text-muted">
+        The pages use a shared responsive layout and a small theme system (default + soft). If you want changes to typography, spacing,
+        or to add exercises and images, tell me and I can update the template and push the changes.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer mt-5 p-4 text-center">
+    Achen's Scribbles
+  </footer>
+
+  <!-- Bootstrap bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer crossorigin="anonymous"></script>
+
+  <script>
+    // Theme switching logic (default + soft only)
+    (function () {
+      const themeButtons = document.querySelectorAll('[data-theme]');
+      const storageKey = 'physics_page_theme';
+      const body = document.body;
+
+      // Apply saved theme or default
+      const saved = localStorage.getItem(storageKey) || 'theme-default';
+      if (saved && saved !== 'theme-default') {
+        body.classList.add(saved);
+      }
+
+      // Update active button UI
+      function updateActiveButtons() {
+        themeButtons.forEach(btn => {
+          const theme = btn.getAttribute('data-theme');
+          const isActive = (theme === 'theme-default' && !Array.from(body.classList).some(c => c.startsWith('theme-')))
+                         || body.classList.contains(theme);
+          if (isActive) {
+            btn.classList.add('btn-accent');
+            btn.classList.remove('btn-light');
+          } else {
+            btn.classList.remove('btn-accent');
+            btn.classList.add('btn-light');
+          }
+        });
+      }
+      updateActiveButtons();
+
+      themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const theme = btn.getAttribute('data-theme');
+          // Remove existing theme-* classes
+          Array.from(body.classList).forEach(c => {
+            if (c.startsWith('theme-')) body.classList.remove(c);
+          });
+          if (theme !== 'theme-default') body.classList.add(theme);
+          // Persist selection
+          localStorage.setItem(storageKey, theme);
+          updateActiveButtons();
+        });
+
+        // keyboard support
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
