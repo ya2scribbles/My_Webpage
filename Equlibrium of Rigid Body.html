@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Highschool Physics — Grade XI</title>
+  <title>Grade XI—Equilibrium of Rigid Body</title>
   <meta name="description" content="Grade XI high school physics: equilibrium, rotational motion, fluids, thermodynamics, waves, optics and more.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -145,13 +145,21 @@
       }
       .layout-flex .content-column { max-width: 100%; }
     }
+    figcaption{
+      background-color: black;
+      color: white;
+      font-style: italic;
+      padding: 2px;
+      text-align: center;
+      font-family: verdana;
+    }
   </style>
 </head>
 <body>
   <header class="site-header container-fluid p-4 d-flex align-items-center justify-content-between">
     <div>
-      <h1 class="h4 m-0">Highschool Physics</h1>
-      <div class="small" style="opacity:.9">Grade XI</div>
+      <h1 class="h4 m-0">Grade XI</h1>
+      <div class="small" style="opacity:.9">Equilibrium of Rigid Body</div>
     </div>
 
     <div class="theme-controls d-flex align-items-center">
@@ -231,7 +239,7 @@
                     <li>Geometrical Optics</li>
                   </ul>
                   <div class="mt-2">
-                    <a href="Physics_GradeXI.html" class="btn btn-sm btn-accent">You are here</a>
+                    <a href="Physics_GradeXI.html" class="btn btn-sm btn-accent">Open Grade XI</a>
                   </div>
                 </div>
               </div>
@@ -270,34 +278,34 @@
       </aside>
 
       <article class="content-column">
-        <h2>Grade XI Physics</h2>
+        <h2><b>Equilibrium of Rigid Body</b></h2>
+        <h3>Concept of Torque</h3>
         <p>
-          Continuing your study of physics in Grade XI will introduce you to the mechanisms behind many engineering and everyday phenomena.
-          We begin with equilibrium and rigid-body mechanics — topics that are essential when designing and building structures — and continue
-          with elasticity, fluids, gases, heat, and waves.
+          Torque is a quantity that make thing rotate. It’s occurs when force applied to lever arm of things, hence that things rotated according to the axis of rotation. That’s why torque can be said as the result of cross product between force and radius. This quantity explain why it’s so easy lift load using lever. Interaction between force and lever arm or radius could be seen in this picture :
         </p>
-
-        <p>For Grade XI we will study these chapters:</p>
-        <ol>
-          <li><a href="Equlibrium of Rigid Body.html">Equilibrium of Rigid Bodies</a></li>
-          <li>Centre of Mass</li>
-          <li>Dynamics of Rotational Motion</li>
-          <li>Elasticity</li>
-          <li>Static Fluids</li>
-          <li>Fluid Dynamics</li>
-          <li>Heat and Temperature</li>
-          <li>Kinetic Theory of Gases</li>
-          <li>Thermodynamics</li>
-          <li>Mechanical Waves</li>
-          <li>Sound Waves</li>
-          <li>Light Waves</li>
-          <li>Geometrical Optics</li>
-        </ol>
-
-        <p>
-          The focus in Grade XI is to familiarize students with engineering applications and the natural laws that describe matter and energy.
-          The goal of these chapters is to build understanding of the physics that surrounds our daily lives.
+        <figure style="float: left;">
+        <img src="PICTURE/Torque.png" alt="Concept of Torque" width="281.2px" height="322.62px">
+        <figcaption>Figure 1 : Concept of Torque</figcaption>
+        </figure>
+        <p>As we can see in the picture, torque occurs when force perpendicular with lever arm/radius. Hence, for torque we have equation :
         </p>
+        <p><b>τ⃗=r⃗×F⃗</b> or <b>τ=F.r</b></p>
+        <p>When force and lever arm/radius not perpendicular (or making an angle), then we take the projection which perpendicular with either force or radius. Meanwhile, if the direction of force and lever arm/ radius parallel that’s mean there is no torque in that system. That’s why if there is a vector force and vector radius, then we could find torque vector using cross product. To understand concept of torque, please take a look of example below.
+        </p>
+        <br>
+        <figure style="float: right;">
+        <img src="PICTURE/Example of Torque.png" alt="Example of Torque" width="281.2px" height="322.62px">
+        <figcaption>Figure 2 : Example of Basic Torque</figcaption>
+        </figure>
+        <p>In this picture we have example of torque with four perpendicular, five acute, and three obtuse force with lever arm. take a look case number one, as we can see the lever arm and force already perpendicular of each other. Hence the torque that work on this case is (24x22) 528 N.m. same through number four. Meanwhile for number five, we can see the lever arm is not perpendicular with the force. Hence for every case when it happen, it's better to make projection in front of angle on sloping side according to horizontal or vertical side. Then, we choose the projection which perpendicular with vertical or horizontal side. 
+        </p>
+        <p>If the perpendicular side in opposite of angle, then we multiple it with sin of an angle. Meanwhile, if the perpendicular side in adjecent of angle, then we multiple it with cos of an angle. You could see the projection of sloping side of number five until twelve in this picture below :</p>
+        <br>
+        <figure style="float: left;">
+        <img src="PICTURE/Torque Projection.png" alt="Torque Projection" width="281.2px" height="322.62px">
+        <figcaption>Figure 3 : Projection of Sloping Side</figcaption>
+        </figure>
+        <p>in this picture, we already make projection of sloping side on prospective horizontal or vertical side. To make it easy to understand, the projection we use to calculate torque is the green one because it’s the projection that perpendicular to horizontal or vertical side. Meanwhile we don’t use the red one because this projection parallel to horizontal or vertical side. Take example number 5, we have green line in opposite of angle. Hence, the value of torque this example is 25 x 30 x sin (37) = 450 N.m. For example number ten, the green line at the adjecent of angle. Hence, the value of torque this example is 40 x 20 x cos 53 = 480 N.m. that's example of basic torque. this example made for make sure student really grasp the concept of Torque.</p>
       </article>
     </div>
   </main>
