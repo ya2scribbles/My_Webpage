@@ -274,7 +274,7 @@
         <h2><b>Example Exercise Field of Electrostatic and Coulomb Force</b></h2>
         <p>Exercise that student get in highschool according to this subchapter could be broken down into basic, equilibrium condition, parallel vector, two vector with angle, and more than two vector. For concept and knowledge question, we will not talk about it in here.</p>
         <h3>Basic</h3>
-        <p>This type exercise is pretty straightforward. it will give you data that you need and clear question. As long as you remember equation of field and force and know which equation that you’ll need to use, you could answer basic question.</p>
+        <p>For basic question, usually this type question is quite straightforward. first you need to write data that known in the problem, and next write what is question asking for. and from there, you just need to choose what equation that you are working for. as long as  you know the equation and how to do little math, you can answer this type of question.</p>
         <ol>
           <li>Two charge with magnitude -8 μC and 12 μC separate with distance 4 m. Calculate Coulomb force that affect these charge!<span><button data-bs-toggle="collapse" data-bs-target="#answer1">Answer</button></span></li>
             <div id="answer1" class="collapse">
@@ -285,11 +285,11 @@
                   <td>\(F_{AB}=\frac{k q_Aq_B}{r^2}\)</td>
                 </tr>
                 <tr>
-                  <td>q<sub>B</sub> = 12 μC = 12 x 10<sup>-6</sup> C</td>
+                  <td>q<sub>B</sub> = +12 μC = +12 x 10<sup>-6</sup> C</td>
                   <td>\(F_{AB} = \frac{9 \times 10^9 \times 8 \times 10^{-6} \times 12 \times 10^{-6}}{4^2}\)</td>
                 </tr>
                 <tr>
-                  <td>R = 4 m</td>
+                  <td>r = 4 m</td>
                   <td>\( \mathbf{F_{AB} = 54 \times 10^{-3} N}\)</td>
                 </tr>
                 <tr>
@@ -335,7 +335,7 @@
                 <tr>
                   <td>F<sub>AB</sub> = 160 N</td>
                   <td>\( \frac{160}{9 \times 10^{11}} = q^2 \)</td>
-                  <td>\( \mathbf{1,333 \times 10^{-5} C = q} \)</td>
+                  <td>\( \mathbf{1,333 \times 10^{-5}Coulumb} = q\)</td>
                 </tr>
               </table>
               </div>
@@ -375,18 +375,240 @@
                   <td>\(324 = 9 \times 10^9 \frac{12 \times 10^{-6} \times q_B}{(12 \times 10^{-2})^2}\)</td>
                 </tr>
                 <tr>
-                  <td>q<sub>A</sub> = 12 μC = 12 x 10<sup>-6</sup> C</td>
+                  <td>q<sub>A</sub> = +12 μC = +12 x 10<sup>-6</sup> C</td>
                   <td>\( \frac{324}{9 \times 10^7} = q_B \)</td>
                 </tr>
                 <tr>
                   <td>q<sub>B</sub> = ......?</td>
-                  <td>\( \mathbf{36 \times 10^{-7} C = q_B} \)</td>
+                  <td>\( \mathbf{36 \times 10^{-7} Coulomb=q_B} \)</td>
                 </tr>
               </table>
               </div>
             </div>
         </ol>
         <hr>
+        <h3>Equilibrium Condition</h3>
+        <p>This kind of problem show when it is involve point that affect by two charge. Usually it follow with phrase “resultant of field (or force) is zero” or “feel the same field (or force)”. Hence, this kind of problem is exercise with equilibrium condition. Usually there are two pattern for this problem. Either equilibrium with two charge with same sign of charge, or with two charge with different sign of charge.</p>
+        <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+          <div style="flex: 0 0 45%;">
+            <figure>
+              <img src="PICTURE/STATIC ELECTRICITY/Equilibrium Field and Force.png" alt="Point of equilibrium between two charge." width="100%" height="auto">
+              <figcaption>Figure 1 : Point of equilibrium between two charge.</figcaption>
+            </figure>
+          </div>
+          <div style="flex: 1;">
+            <p>As we can see from the figure on the left, there is two pattern from this problem. First, when two charge has same type of charge. In this case, the point of equilibrium exist between two charge (point q). Meanwhile, for two charge has opposite type, the point of equilibrium exist beside the weaker charge (point p). If we try to understand equilibrium from analytical stand point, we could find the distance of point equilibrium between two charge. We can use either field of electrostatic or coulomb force equation :</p>
+          </div>
+        </div>
+        <div class="table-responsive">
+        <table class="table table-secondary table-borderless" style="text-align: center;">
+          <tr>
+            <th>Same Type of Charge</th>
+            <th>Different Type of Charge</th>
+          </tr>
+          <tr>
+            <td>\(F_{Aq}=F_{Bq}\)</td>
+            <td>\(F_{Dp}=F_{Cp}\)</td>
+          </tr>
+          <tr>
+            <td>\(\cancel{k} \frac{q_A \cdot \cancel{q_q}}{r_{Aq}^2}=\cancel{k} \frac{q_B \cdot \cancel{q_q}}{r_{Bq}^2}\)</td>
+            <td>\(\cancel{k} \frac{q_D \cdot \cancel{q_p}}{r_{Dp}^2}=\cancel{k} \frac{q_C \cdot \cancel{q_p}}{r_{Cp}^2}\)</td>
+          </tr>
+          <tr>
+            <td>\(\frac{q_A}{x^2}=\frac{q_B}{(r-x)^2}\)</td>
+            <td>\(\frac{q_D}{x^2}=\frac{q_C}{(r+x)^2}\)</td>
+          </tr>
+          <tr>
+            <td>\(\bbox[5px,border:2px solid red]{\mathbf{\frac{q_A}{q_B}=\frac{x^2}{(r-x)^2}}}\)</td>
+            <td>\(\bbox[5px,border:2px solid red]{\mathbf{\frac{q_D}{q_C}=\frac{x^2}{(r+x)^2}}}\)</td>
+          </tr>
+        </table>
+        </div>
+        <p>From this we learn that for finding equilibrium point between two charge, we don't need to know magnitude of charge we put on equilibrium point. We only need to know magnitude of two charge and their distance. Once we know, we could find a point where field of electrostatic and coulomb force equal to zero. That’s how you could find value of x.</p>
+        <ol>
+          <li>Two charge +16 μC and +4 μC separate 9 m. a test charge 0,5 μC would be put around this two charge. Where you should put this test charge to achieve equilibrium?<span><button data-bs-toggle="collapse" data-bs-target="#answerI1">Answer</button></span></li>
+          <div id="answerI1" class="collapse">
+              <div class="table-responsive">
+              <table class="table table-secondary table-borderless" >
+                <tr>
+                  <td>q<sub>A</sub> = +16 μC</td>
+                  <td>\(\frac{q_A}{q_B}=\frac{x^2}{(r-x)^2}\)</td>
+                  <td>36-4x=2x</td>
+                </tr>
+                <tr>
+                  <td>q<sub>B</sub> = +4 μC</td>
+                  <td>\(\frac{16}{4}=\frac{x^2}{(9-x)^2}\)</td>
+                  <td>36=2x+4x</td>
+                </tr>
+                <tr>
+                  <td>r = 4 m</td>
+                  <td>\(\sqrt{\frac{16}{4}}=\frac{x}{(9-x)}\)</td>
+                  <td>36=6x</td>
+                </tr>
+                <tr>
+                  <td>x = ......?</td>
+                  <td>\(\frac{4}{2}=\frac{x}{(9-x)}\)</td>
+                  <td>36/6=x</td>
+                </tr>
+                <tr>
+                  <td>it's same type</td>
+                  <td>\(4 \cdot (9-x)=2 \cdot x\)</td>
+                  <td><b>6 m beside +16 μC = x</b></td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          <li>There are two charge +25 μC and -324 μC separate as far as 64 cm. where is the point around these two charge that has zero field of electrostatic?<span><button data-bs-toggle="collapse" data-bs-target="#answerI2">Answer</button></span></li>
+          <div id="answerI2" class="collapse">
+              <div class="table-responsive">
+              <table class="table table-secondary table-borderless" >
+                <tr>
+                  <td>q<sub>A</sub> = +25 μC</td>
+                  <td>\(\frac{q_A}{q_B}=\frac{x^2}{(r+x)^2}\)</td>
+                  <td>320+5x=18x</td>
+                </tr>
+                <tr>
+                  <td>q<sub>B</sub> = -324 μC</td>
+                  <td>\(\frac{25}{324}=\frac{x^2}{(64+x)^2}\)</td>
+                  <td>320=18x-5x</td>
+                </tr>
+                <tr>
+                  <td>r = 64 cm</td>
+                  <td>\(\sqrt{\frac{25}{324}}=\frac{x}{(64+x)}\)</td>
+                  <td>320=13x</td>
+                </tr>
+                <tr>
+                  <td>x = ......?</td>
+                  <td>\(\frac{5}{18}=\frac{x}{(64+x)}\)</td>
+                  <td>320/13=x</td>
+                </tr>
+                <tr>
+                  <td>it's different type</td>
+                  <td>\(5 \cdot (64+x)=18 \cdot x\)</td>
+                  <td><b>24,615 cm beside +25 μC = x</b></td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          <li>Find the distance between +9 μC and +4 μC hence you can't feel the force of coulomb at the distance 10 cm from +4 μC!<span><button data-bs-toggle="collapse" data-bs-target="#answerI3">Answer</button></span></li>
+          <div id="answerI3" class="collapse">
+              <div class="table-responsive">
+              <table class="table table-secondary table-borderless" >
+                <tr>
+                  <td>q<sub>A</sub> = +4 μC</td>
+                  <td>\(\frac{q_A}{q_B}=\frac{x^2}{(r-x)^2}\)</td>
+                  <td>2r - 20=30</td>
+                </tr>
+                <tr>
+                  <td>q<sub>B</sub> = +9 μC</td>
+                  <td>\(\frac{4}{9}=\frac{10^2}{(r-10)^2}\)</td>
+                  <td>2r=30+20</td>
+                </tr>
+                <tr>
+                  <td>r = ......?</td>
+                  <td>\(\sqrt{\frac{4}{9}}=\frac{10}{(r-10)}\)</td>
+                  <td>2r=50</td>
+                </tr>
+                <tr>
+                  <td>x = 10 cm beside +4 μC</td>
+                  <td>\(\frac{2}{3}=\frac{10}{(r-10)}\)</td>
+                  <td>r=50/2</td>
+                </tr>
+                <tr>
+                  <td>it's same type</td>
+                  <td>\(2 \cdot (r-10)=3 \cdot 10\)</td>
+                  <td><b>r=25 cm</b></td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          <li>Find the distance between +50 μC and -2 μC hence you can't feel the field of electrostatic at the distance 4 cm from -2 μC!<span><button data-bs-toggle="collapse" data-bs-target="#answerI4">Answer</button></span></li>
+          <div id="answerI4" class="collapse">
+              <div class="table-responsive">
+              <table class="table table-secondary table-borderless" >
+                <tr>
+                  <td>q<sub>A</sub> = -2 μC</td>
+                  <td>\(\frac{q_A}{q_B}=\frac{x^2}{(r+x)^2}\)</td>
+                  <td>r+4=20</td>
+                </tr>
+                <tr>
+                  <td>q<sub>B</sub> = +50 μC</td>
+                  <td>\(\frac{2}{50}=\frac{4^2}{(r+4)^2}\)</td>
+                  <td>r=20 - 4</td>
+                </tr>
+                <tr>
+                  <td>r = ......?</td>
+                  <td>\(\sqrt{\frac{1}{25}}=\frac{4}{(r+4)}\)</td>
+                  <td><b>r = 16 cm</b></td>
+                </tr>
+                <tr>
+                  <td>x = 4 cm beside -2 μC</td>
+                  <td>\(\frac{1}{5}=\frac{4}{(r+4)}\)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>it's different type</td>
+                  <td>\(1 \cdot (r+4)=5 \cdot 4\)</td>
+                  <td></td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          <li>If you could find the point with resultant of field equal zero at 8 cm from -5 μC between two charge. Find magnitude another charge if they separate 9 m!<span><button data-bs-toggle="collapse" data-bs-target="#answerI5">Answer</button></span></li>
+          <div id="answerI5" class="collapse">
+              <div class="table-responsive">
+              <table class="table table-secondary table-borderless" >
+                <tr>
+                  <td>q<sub>A</sub> = -5 μC</td>
+                  <td>\(\frac{q_A}{q_B}=\frac{x^2}{(r-x)^2}\)</td>
+                </tr>
+                <tr>
+                  <td>q<sub>B</sub> = ......?</td>
+                  <td>\(\frac{5}{q_B}=\frac{8^2}{(900-8)^2}\)</td>
+                </tr>
+                <tr>
+                  <td>r = 9 m = 900 cm</td>
+                  <td>\(\frac{5}{q_B}=\frac{64}{795664}\)</td>
+                </tr>
+                <tr>
+                  <td>x = 8 cm beside -5 μC</td>
+                  <td>\(5 \cdot \frac{795664}{64}=q_B\)</td>
+                </tr>
+                <tr>
+                  <td>it's same type</td>
+                  <td><b>-62161,25 μC=q<sub>B</sub></b></td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          <li>Two of charge separate as far as 12 m. if point p doesn't feel field of electrostatic at 12 cm from +14 μC and it’s not between two charge. Find magnitude another!<span><button data-bs-toggle="collapse" data-bs-target="#answerI6">Answer</button></span></li>
+          <div id="answerI6" class="collapse">
+              <div class="table-responsive">
+              <table class="table table-secondary table-borderless" >
+                <tr>
+                  <td>q<sub>A</sub> = +14 μC</td>
+                  <td>\(\frac{q_A}{q_B}=\frac{x^2}{(r+x)^2}\)</td>
+                </tr>
+                <tr>
+                  <td>q<sub>B</sub> = ......?</td>
+                  <td>\(\frac{14}{q_B}=\frac{12^2}{(1200+12)^2}\)</td>
+                </tr>
+                <tr>
+                  <td>r = 12 m = 1200 cm</td>
+                  <td>\(\frac{14}{q_B}=\frac{144}{1468944}\)</td>
+                </tr>
+                <tr>
+                  <td>x = 12 cm beside +14 μC</td>
+                  <td>\(14 \cdot \frac{1468944}{144}=q_B\)</td>
+                </tr>
+                <tr>
+                  <td>it's different type</td>
+                  <td><b>-142814 μC = q<sub>B</sub></b></td>
+                </tr>
+              </table>
+              </div>
+            </div>
+        </ol>
       </article>
     </div>
   </main>
